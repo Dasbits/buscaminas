@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #21242c;
+
+}
+#app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+}
+h2{
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+}
+#infoGame{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+#selectDif{
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+}
+#crono, #numFlags{
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#crono img{
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+#juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.fila {
+    display: flex;
+}
+
+.casella {
+    border: 1px solid #000;
+    width: 30px;
+    height: 30px;
+    background-color: #d1cfcf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.casella:hover {
+    background-color: #e0e0e0;
+}
+
+.casella.revelada {
+    background-color: #fff;
+}

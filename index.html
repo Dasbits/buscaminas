@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Buscaminas - David Salvador</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Buscaminas</h1>
+        <h2>David Salvador</h2>
+        <div id="infoGame">
+            <div id="selectDif">
+                <label for="dificultat">Dificultat:</label>
+                <select name="dificultat" id="dificultat">
+                    <option value="facil" selected>Facil</option>
+                    <option value="mitja">Mitja</option>
+                    <option value="dificil">Dificil</option>
+                </select>
+            </div>
+            <div id="crono">
+                <img src="img/crono.png" alt="clock_img">
+                <span id="temps">0</span>
+            </div>
+            <div id="numFlags">
+                <img src="img/flag.png" alt="flag_img">
+                <span id="flags">0</span>
+            </div>
+        </div>
+        <div id="juego"></div>
+    </div>
+    <script src="dist/Casella.js"></script>
+    <script src="dist/Tauler.js"></script>
+    <script src="dist/Joc.js"></script>
+    <script>
+        // Inicializamos el juego
+        let dificultat = document.getElementById('dificultat').value;
+        let joc = new Joc(dificultat);
+        // addEventListener recursivo para que se ejecute el juego cuando se cambie la dificultad
+        document.getElementById('dificultat').addEventListener('change', function () {
+            document.getElementById('juego').innerHTML = '';
+            let dificultat = document.getElementById('dificultat').value;
+            let joc = new Joc(dificultat);
+            document.getElementById('temps').innerHTML = 0;
+        });
+        var timer = setInterval(function () {
+            let counter = parseInt(document.getElementById('temps').innerHTML)+1;
+            document.getElementById('temps').innerHTML = counter;
+        }, 1000);
+    </script>
+</body>
+
+</html>
